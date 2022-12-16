@@ -1,0 +1,10 @@
+<div class="meal-details">
+    <button type="button" class="recipe-btn2" id="recipeCloseBtn">
+        <i class= "bruh"></i>
+    </button>
+
+    <div class = "recipe-content">
+        <h2 class="recipe-name"></h2>
+        <p class="recipe-category"></p>
+    </div>
+<div>
