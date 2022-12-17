@@ -128,6 +128,9 @@ body{
     .meal-item{
         margin : 0;
     }
+    .meal-data{
+        width: 700px;
+    }
 
 }
 .meal-data{
@@ -189,4 +192,33 @@ body{
 .recipe-name{
     letter-spacing: 1px;
     padding-bottom: 1rem;
+}
+.recipe-category{
+    background: #fff;
+    font-weight: 500;
+    color: var(--tenne-tawny);
+    display: inline-block;
+    padding: 0.2rem 0.5 rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+.recipe-img img{
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+.video-link{
+    margin: 1.4rem 0;
+}
+.link-text{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+.link-text:hover{
+    color: cyan;
 }
