@@ -1,3 +1,4 @@
+//let holder = ""
 
 document.addEventListener('DOMContentLoaded', () => {
     // fetch(`https:www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast`)
@@ -9,13 +10,28 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.search-inputs-container').addEventListener('submit', (e) => {
         e.preventDefault()
         let inputs = e.target.querySelector('.search-bar').value
-        fetch(`https:www.themealdb.com/api/json/v1/1/filter.php?i=${inputs}`)
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputs}`)
         .then(res => res.json())
         .then(data =>{
             console.log(data.meals)
+            let holder = ""
             if (data.meals){
-                data.meals.forEach(meal => {
-                    console.log(meal)
+                data.meals.forEach(z => {
+                    console.log(z)
+                    //mealPageDisplay(meal)
+                    holder += `
+                        <div class="meal-item" id="${z.id}}">
+                            <div class="meal-img">
+                                <img src="${z.strMealThumb}" alt="food">        
+                            </div>
+                            <div class="meal-name">
+                                <h3>${z.strMeal}</h3>
+                                <button class="recipe-btn">Recipe</button>
+                            </div>
+                        </div>
+                        `
+                        let AddingPoint = document.querySelector('.food')
+                        AddingPoint.innerHTML = holder
                 })
             }
         })
@@ -24,21 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
-function starterPageDisplay(z){
-    let holder = document.createElement('div')
-    holder.id = 'RemoveMe'
-    holder.innerHTML = `
-    <div class="meal-item" id="${z.id}}">
-        <div class="meal-img">
-            <img src="${z.strMeal}" alt="food">        
-        </div>
-        <div class="meal-name">
-            <h3>${z.strMealThumb}</h3>
-            <button class="recipe-btn">Recipe</button>
-        </div>
-    </div>
-    `
-    let AddingPoint = document.querySelector('.food')
-    AddingPoint.appendChild(holder)
-}
+// function mealPageDisplay(z){
+//     let holder += `
+//     <div class="meal-item" id="${z.id}}">
+//         <div class="meal-img">
+//             <img src="${z.strMealThumb}" alt="food">        
+//         </div>
+//         <div class="meal-name">
+//             <h3>${z.strMeal}</h3>
+//             <button class="recipe-btn">Recipe</button>
+//         </div>
+//     </div>
+//     `
+//     let AddingPoint = document.querySelector('.food')
+//     AddingPoint.innerHTML = holder
+// }
 

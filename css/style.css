@@ -43,6 +43,7 @@ body{
     display: flex;
     align-items: stretch;
     text-align: center;
+    max-height: 5rem;
 }
 
 .search-btn{
@@ -221,4 +222,7 @@ body{
 }
 .link-text:hover{
     color: cyan;
+}
+.container{
+    min-height: 100vh;
 }
