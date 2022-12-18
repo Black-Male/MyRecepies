@@ -22,8 +22,11 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 .title{
-    font-size: 2rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
+}
+.title2{
+    font-size: 2rem;
 }
 .meal-wrapper{
     max-width: 1280px;
@@ -225,4 +228,23 @@ body{
 }
 .container{
     min-height: 100vh;
+}
+.No-Meal{
+    font-size: 4rem;
+    font-weight: 800;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+}
+.login{
+    background-color: var(--tenne-tawny);
+    color: #fff;
+    text-align: center;
+    padding: 15px 32px;
+    border: none;
+    font-size: 15px;
+    font-weight: 900 ;
+    border-radius: 8px;
+}
+.login:hover{
+    background-color: var(--tenn-tawny-dark);
 }

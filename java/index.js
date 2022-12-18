@@ -32,7 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         `
                         let AddingPoint = document.querySelector('.food')
                         AddingPoint.innerHTML = holder
+                        holder.querySelector('.recipe-btn').addEventListener('click',() => {
+                            
+                        })
+                        
                 })
+            }else{
+               holder += `
+                    <div class="Removed">   
+                        <p class= "No-Meal">No meals found, please try another keyword<p>
+                    </div>`
+               let AddingPoint = document.querySelector('.food')
+               AddingPoint.innerHTML = holder
             }
         })
         
