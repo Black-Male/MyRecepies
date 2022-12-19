@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div class="meal-name">
                                 <h3>${z.strMeal}</h3>
-                                <button class="recipe-btn" id="${z.idMeal}">Recipe</button>
+                                <a href="#" class="recipe-btn1" id="${z.idMeal}">Recipe</a>
                             </div>
                         </div>
                         `
@@ -56,11 +56,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     })
 
+
     // dummy login point
-    // document.querySelector('.Login').addEventListener('click', () => {
-
-    // })
+    // document.querySelector('.Login').addEventListener('click', loginDisplay)
 })
-// document.querySelector('.food').addEventListener('click', (y) => {
+document.querySelector('.food').addEventListener('click', showRecipe)
 
-// })
+
+function showRecipe(e){
+    e.preventDefault()
+    if(e.target.classList.contains('recipe-btn1')){
+        let tobeviewed = e.target.parentElement.parentElement
+        fetch(`https:www.themealdb.com/api/json/v1/1/lookup.php?i=${tobeviewed.querySelector('.recipe-btn1').id}`)
+        .then(res => res.json())
+        .then(data => popUpDisplay(data.meals))
+    }
+}
+
+function popUpDisplay(z){
+    let y = z[0]
+    console.log(y)
+    let adding = document.createElement('div')
+    let holder2 = `
+
+        <div class="meal-data">
+            <button type="button" class="recipe-btn2" id="recipeCloseBtn">
+                X
+            </button>
+            <div class = "recipe-content">
+                <h2 class="recipe-name">${y.strMeal}</h2>
+                <p class="recipe-category">Category:${y.strCategory}</p>
+                
+            </div>
+            <div class="instructions">
+                <h3>instructions</h3>
+                <p>
+                    ${y.strInstructions}
+                </p>
+            </div>
+            <div class="recipe-img">
+                <img src="${y.strMealThumb}" alt="picture of">
+            </div>
+            <div class="video-link">
+                <a href="${y.strYoutube}" target="_blank" class="link-text">watch video</a>
+            </div>
+            
+        </div>
+
+
+    `
+    adding.innerHTML = holder2
+    document.querySelector('.meal-wrapper').append(adding)
+}
