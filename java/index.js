@@ -107,4 +107,8 @@ function popUpDisplay(z){
     `
     adding.innerHTML = holder2
     document.querySelector('.meal-wrapper').append(adding)
+
+    document.querySelector('.recipe-btn2').addEventListener('click',() => {
+        adding.remove()
+    })
 }
