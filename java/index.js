@@ -116,9 +116,22 @@ function popUpDisplay(z){
 function loginDisplay(){
     let adding = document.createElement('div')
     let holder3 =`
+    <div class="loginDisplay">
+        <div class="loginDisplay-content">
+            <button class="closeLogin">X</button>
+            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Password">
+            <button class="trueLogin">LOGIN</button>
+        </div>
+    </div>
     `
 
     adding.innerHTML = holder3
     document.querySelector('body').append(adding)
-    document.
+    document.querySelector('.trueLogin').addEventListener('click',() => {
+        adding.remove()
+    })
+    document.querySelector('.closeLogin').addEventListener('click',() => {
+        adding.remove()
+    })
 }

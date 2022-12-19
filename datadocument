@@ -39,6 +39,9 @@ file for creating innerHtml for my js script
 
 <div class="loginDisplay">
     <div class="loginDisplay-content">
-        <input type="text">
+        <button class="closeLogin">X</button>
+        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Password">
+        <button class="trueLogin">LOGIN</button>
     </div>
 </div>
