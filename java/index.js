@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // dummy login point
-    // document.querySelector('.Login').addEventListener('click', loginDisplay)
+    document.querySelector('.login').addEventListener('click', loginDisplay)
 })
 document.querySelector('.food').addEventListener('click', showRecipe)
 
@@ -113,3 +113,12 @@ function popUpDisplay(z){
     })
 }
 
+function loginDisplay(){
+    let adding = document.createElement('div')
+    let holder3 =`
+    `
+
+    adding.innerHTML = holder3
+    document.querySelector('body').append(adding)
+    document.
+}
